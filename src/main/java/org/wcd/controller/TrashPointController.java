@@ -26,6 +26,11 @@ public class TrashPointController {
         this.trashPointService = trashPointService;
     }
 
+    @RequestMapping("/")
+    public String index() {
+        return "Greetings from Spring Boot!";
+    }
+
     @RequestMapping(value="/all", method = RequestMethod.GET)
     public List<TrashPoint> getTrashPoint() {
         return this.trashPointRepository.findAll();
